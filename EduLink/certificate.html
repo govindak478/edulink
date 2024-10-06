@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Upload</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        display: flex;
+        height: 100vh;
+        background-color: #f7fafc;
+    }
+
+    .sidebar {
+        width: 250px;
+        background-color: #5a67d8;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 40px;
+    }
+
+    .sidebar a {
+        text-decoration: none;
+        color: white;
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .sidebar a:hover {
+        background-color: #434190;
+    }
+
+    .main-content {
+        flex: 1;
+        padding: 20px;
+        background-color:#c1dbffb6;
+    }
+
+    .card-row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .upload-card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.245);
+        text-align: center;
+        width: 30%;
+        position: relative;
+        height: 300px; 
+        margin-top: 37px;/* Adjust the height as needed */
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+        margin: 10px 0;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .delete-btn {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .delete-btn:hover {
+        background-color: #e60000;
+    }
+
+    .uploaded-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #message {
+        color: green;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <div class="sidebar">
+        <h2>EduLink</h2>
+        <a href="dashboard.html">Home</a>
+        <a href="#">Certificate</a>
+        <a href="courses.html">Courses</a>
+        <a href="job.html">Job</a>
+        <a href="intership.html">Internship</a>
+        <a href="home.html">Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="card-row">
+            <!-- Card 1 -->
+            <div class="upload-card" id="card1">
+                <div class="upload-section" id="uploadSection1">
+                    <h2>Upload Your Certificate</h2>
+                    <form id="uploadForm1" enctype="multipart/form-data">
+                        <label for="certificateFile1">Select Certificate:</label>
+                        <input type="file" id="certificateFile1" name="certificateFile1" accept=".pdf, .jpg, .jpeg, .png" required>
+                        <button type="submit">Upload</button>
+                    </form>
+                </div>
+                <img src="" id="uploadedImage1" class="uploaded-image hidden" alt="Uploaded Certificate">
+                <button type="button" class="delete-btn hidden" id="deleteBtn1">Delete</button>
+                <div id="message1"></div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="upload-card" id="card2">
+                <div class="upload-section" id="uploadSection2">
+                    <h2>Upload Your Certificate</h2>
+                    <form id="uploadForm2" enctype="multipart/form-data">
+                        <label for="certificateFile2">Select Certificate:</label>
+                        <input type="file" id="certificateFile2" name="certificateFile2" accept=".pdf, .jpg, .jpeg, .png" required>
+                        <button type="submit">Upload</button>
+                    </form>
+                </div>
+                <img src="" id="uploadedImage2" class="uploaded-image hidden" alt="Uploaded Certificate">
+                <button type="button" class="delete-btn hidden" id="deleteBtn2">Delete</button>
+                <div id="message2"></div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="upload-card" id="card3">
+                <div class="upload-section" id="uploadSection3">
+                    <h2>Upload Your Certificate</h2>
+                    <form id="uploadForm3" enctype="multipart/form-data">
+                        <label for="certificateFile3">Select Certificate:</label>
+                        <input type="file" id="certificateFile3" name="certificateFile3" accept=".pdf, .jpg, .jpeg, .png" required>
+                        <button type="submit">Upload</button>
+                    </form>
+                </div>
+                <img src="" id="uploadedImage3" class="uploaded-image hidden" alt="Uploaded Certificate">
+                <button type="button" class="delete-btn hidden" id="deleteBtn3">Delete</button>
+                <div id="message3"></div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="upload-card" id="card4">
+                <div class="upload-section" id="uploadSection4">
+                    <h2>Upload Your Certificate</h2>
+                    <form id="uploadForm4" enctype="multipart/form-data">
+                        <label for="certificateFile4">Select Certificate:</label>
+                        <input type="file" id="certificateFile4" name="certificateFile4" accept=".pdf, .jpg, .jpeg, .png" required>
+                        <button type="submit">Upload</button>
+                    </form>
+                </div>
+                <img src="" id="uploadedImage4" class="uploaded-image hidden" alt="Uploaded Certificate">
+                <button type="button" class="delete-btn hidden" id="deleteBtn4">Delete</button>
+                <div id="message4"></div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="upload-card" id="card5">
+                <div class="upload-section" id="uploadSection5">
+                    <h2>Upload Your Certificate</h2>
+                    <form id="uploadForm5" enctype="multipart/form-data">
+                        <label for="certificateFile5">Select Certificate:</label>
+                        <input type="file" id="certificateFile5" name="certificateFile5" accept=".pdf, .jpg, .jpeg, .png" required>
+                        <button type="submit">Upload</button>
+                    </form>
+                </div>
+                <img src="" id="uploadedImage5" class="uploaded-image hidden" alt="Uploaded Certificate">
+                <button type="button" class="delete-btn hidden" id="deleteBtn5">Delete</button>
+                <div id="message5"></div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="upload-card" id="card6">
+                <div class="upload-section" id="uploadSection6">
+                    <h2>Upload Your Certificate</h2>
+                    <form id="uploadForm6" enctype="multipart/form-data">
+                        <label for="certificateFile6">Select Certificate:</label>
+                        <input type="file" id="certificateFile6" name="certificateFile6" accept=".pdf, .jpg, .jpeg, .png" required>
+                        <button type="submit">Upload</button>
+                    </form>
+                </div>
+                <img src="" id="uploadedImage6" class="uploaded-image hidden" alt="Uploaded Certificate">
+                <button type="button" class="delete-btn hidden" id="deleteBtn6">Delete</button>
+                <div id="message6"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setupUploadForm(formId, fileInputId, uploadSectionId, uploadedImageId, deleteBtnId, messageId) {
+            const fileInput = document.getElementById(fileInputId);
+            const uploadSection = document.getElementById(uploadSectionId);
+            const uploadedImage = document.getElementById(uploadedImageId);
+            const deleteBtn = document.getElementById(deleteBtnId);
+            const message = document.getElementById(messageId);
+
+            document.getElementById(formId).addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                if (fileInput.files.length === 0) {
+                    message.textContent = "Please select a certificate to upload.";
+                    message.style.color = 'red';
+                    return;
+                }
+
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    uploadedImage.src = e.target.result;
+                    uploadSection.classList.add('hidden');
+                    uploadedImage.classList.remove('hidden');
+                    deleteBtn.classList.remove('hidden');
+                    message.textContent = "Certificate uploaded successfully!";
+                    message.style.color = 'green';
+                };
+
+                reader.readAsDataURL(file);
+            });
+
+            deleteBtn.addEventListener('click', function () {
+                uploadedImage.classList.add('hidden');
+                deleteBtn.classList.add('hidden');
+                uploadSection.classList.remove('hidden');
+                fileInput.value = '';
+                message.textContent = "Certificate deleted successfully!";
+                message.style.color = 'red';
+            });
+        }
+
+        setupUploadForm('uploadForm1', 'certificateFile1', 'uploadSection1', 'uploadedImage1', 'deleteBtn1', 'message1');
+        setupUploadForm('uploadForm2', 'certificateFile2', 'uploadSection2', 'uploadedImage2', 'deleteBtn2', 'message2');
+        setupUploadForm('uploadForm3', 'certificateFile3', 'uploadSection3', 'uploadedImage3', 'deleteBtn3', 'message3');
+        setupUploadForm('uploadForm4', 'certificateFile4', 'uploadSection4', 'uploadedImage4', 'deleteBtn4', 'message4');
+        setupUploadForm('uploadForm5', 'certificateFile5', 'uploadSection5', 'uploadedImage5', 'deleteBtn5', 'message5');
+        setupUploadForm('uploadForm6', 'certificateFile6', 'uploadSection6', 'uploadedImage6', 'deleteBtn6', 'message6');
+    </script>
+</body>
+</html>

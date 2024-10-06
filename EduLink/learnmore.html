@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Info Boxes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .marquee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-auto-rows: minmax(100px, auto);
+            gap: 20px;
+            animation: scroll-left 15s linear infinite;
+        }
+
+        .box {
+            background-color: #e6f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        /* Assigning different sizes for boxes */
+        .box:nth-child(odd) {
+            background-color: #e0f7fa;
+            grid-row: span 2; /* Some boxes span more rows */
+        }
+
+        .box:nth-child(even) {
+            background-color: #f1f8e9;
+        }
+
+        .large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee">
+        <div class="marquee-grid">
+            <div class="box large">
+                49 Lakh<br>
+                Accounting/Auditing
+            </div>
+            <div class="box">
+                2.3 Cr<br>
+                Candidates in T1 Cities
+            </div>
+            <div class="box large">
+                5 Cr+<br>
+                Active Job Seekers
+            </div>
+            <div class="box">
+                57 Lakh<br>
+                BPO/Call-centre
+            </div>
+            <div class="box">
+                700+<br>
+                Cities Pan India
+            </div>
+            <div class="box large">
+                32 Lakh<br>
+                IT Services
+            </div>
+            <div class="box">
+                2.9 Cr<br>
+                Males
+            </div>
+            <div class="box large">
+                40 Lakh<br>
+                Post Graduates
+            </div>
+            <div class="box">
+                70%<br>
+                Connected Leads
+            </div>
+            <div class="box">
+                1.1 Cr<br>
+                Female
+            </div>
+            <div class="box large">
+                1.9 Cr<br>
+                Freshers
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #fce2e9;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 800px;
+            background-color: #f1163a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 40px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            background-color: #ee6464;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 50px;
+            margin-top: 10px;
+        }
+        
+
+        .left-cards {
+            width: 50%;
+            height: 50%;
+        }
+
+        .right-cards {
+            width: 70%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: 200px;
+        }
+
+        .card .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .card p {
+            color: #888;
+        }
+
+        /* Ensure smaller cards stay in a square layout */
+        .small-card {
+            background-color: #69ccb6;
+            padding: 60px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* Two columns layout for the below cards */
+        .bottom-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 20px;
+            block-size: 100px;
+        }
+
+        .updates-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+
+        .updates h3 {
+            margin-bottom: 20px;
+        }
+
+        .updates ul {
+            list-style-type: none;
+        }
+
+        .updates ul li {
+            margin: 15px 0;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .updates ul li i {
+            margin-right: 10px;
+            color: #888;
+        }
+
+        /* Plus button for adding updates */
+        .add-update-btn {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+
+        .add-update-btn button {
+            background-color: #5a67d8;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-update-btn button:hover {
+            background-color: #434190;
+        }
+
+        .delete-btn {
+            background-color: #ff4d4f;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: #e04445;
+        }
+
+        .chart-container {
+            width: 450px;
+            height: 150px;
+        /* Increased height for better space */
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat p {
+            margin: 5px 0;
+            color: #000000;
+        }
+
+        .stat .value {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Icon colors for each card */
+
+
+        .support-requests .icon-box {
+            background-color: #26c6da;
+        }
+
+        .secondary-requests .icon-box {
+            background-color: #9ccc65;
+        }
+
+        .small-card i {
+            font-size: 24px;
+            color: #555;
+        }
+
+        .small-card .icon-box {
+            background-color: transparent;
+        }
+
+        /* Styling for the update text box */
+        #update-text {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>EduLink</h2>
+            <a href="home.html">Home</a>
+            <a href="job.html">Job</a>
+            <a href="internship.html">Internship</a>
+            <a href="#">Logout</a>
+        </div>
+
+        <!-- Main content -->
+        <div class="main">
+            <!-- All Cards in One Row -->
+            <div class="card-container">
+                <!-- Left - Two Larger Cards -->
+                <div class="left-cards">
+                    <div class="card support-requests">
+                        <h3>350</h3>
+                        <p>Total number of Comapnies Coming to Campus</p>
+                        <div class="icon-box">
+                            <i class="fas fa-life-ring"></i>
+                        </div>
+                        <div class="stats">
+                            <span>10 Visited ||</span>
+                            <span>5 Running ||</span>
+                            <span>3 About to Come</span>
+                        </div>
+                    </div>
+                    <div class="card secondary-requests" style="margin-top: 20px;">
+                        <h3>350</h3>
+                        <p>Total number of Internships In Campus</p>
+                        <div class="icon-box">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="stats">
+                            <span>10 done ||</span>
+                            <span>4 Happening ||</span>
+                            <span>3 About to conduct</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right - Four Smaller Cards in 2x2 grid -->
+                <div class="right-cards">
+                    <div class="small-card earnings">
+                        <div>
+                            <h3>$30200</h3>
+                            <p>Profit</p>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                    <div class="small-card page-views">
+                        <div>
+                            <h3>390+</h3>
+                            <p>Number of Students Placed</p>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="small-card tasks">
+                        <div>
+                            <h3>145</h3>
+                            <p>Tasks</p>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                    <div class="small-card downloads">
+                        <div>
+                            <h3>290+</h3>
+                            <p>Files</p>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Container (Two Columns) -->
+            <div class="bottom-container">
+                <!-- Left side: Task Performance -->
+                <div class="card">
+                    <h2>Tasks Performance</h2>
+                    <div class="chart-container">
+                        <canvas id="taskChart"></canvas>
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <p class="value">56%</p>
+                            <p>CS</p>
+                        </div>
+                        <div class="stat">
+                            <p class="value">52%</p>
+                            <p>IT</p>
+                        </div>
+                        <div class="stat">
+                            <p class="value">32%</p>
+                            <p>EXTC</p>
+                        </div>
+                        <div class="stat">
+                            <p class="value">67%</p>
+                            <p>ECS</p>
+                        </div>
+                        <div class="stat">
+                            <p class="value">13%</p>
+                            <p>CIVIL/MECH</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side: Latest Updates -->
+                <div class="updates-card updates">
+                    <div class="add-update-btn">
+                        <input type="text" id="update-text" placeholder="Write your update here...">
+                        <button onclick="addUpdate()">+ Add Update</button>
+                    </div>
+                    <h3>Latest Updates</h3>
+                    <ul id="updates-list">
+                        <li>
+                            <span><i class="fas fa-users"></i>20 DSA Questions</span>
+                            <button class="delete-btn" onclick="deleteUpdate(this)">Delete</button>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-box"></i>React.js Project</span>
+                            <button class="delete-btn" onclick="deleteUpdate(this)">Delete</button>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-user-friends"></i>DBMS Concept</span>
+                            <button class="delete-btn" onclick="deleteUpdate(this)">Delete</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('taskChart').getContext('2d');
+        const taskChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['CS', 'IT', 'EXTC', 'ECS','CIVIL,MECH'],
+                datasets: [{
+                    data: [56, 52, 32, 67, 20],
+                    backgroundColor: ['#28a745', '#ffc107', '#dc3545','#640D5F','#795757'],
+                    hoverBackgroundColor: ['#218838', '#e0a800', '#c82333','#640D5F','#795757'],
+                    borderWidth: 5,
+                    borderColor: '#fff',
+                    hoverBorderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                cutout: '80%',
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                }
+            }
+        });
+
+        // Function to add new updates
+        function addUpdate() {
+            const updateText = document.getElementById('update-text').value;
+            if (updateText.trim() === '') {
+                alert('Please enter some text before adding an update.');
+                return;
+            }
+
+            const ul = document.getElementById('updates-list');
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <span><i class="fas fa-bell"></i> ${updateText}</span>
+                <button class="delete-btn" onclick="deleteUpdate(this)">Delete</button>
+            `;
+            ul.appendChild(li);
+
+            // Clear the input after adding the update
+            document.getElementById('update-text').value = '';
+        }
+
+        // Function to delete updates
+        function deleteUpdate(button) {
+            const li = button.parentElement;
+            li.remove();
+        }
+    </script>
+</body>
+</html>

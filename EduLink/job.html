@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            background-color: #f7fafc;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #5a67d8;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            height: 100vh;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            background-color: #434190;
+        }
+
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+        }
+
+        /* Company Grid */
+        .company-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Job Box Styles */
+        .job-box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.367);
+            width: 280px;
+            height: 300px;
+            padding: 20px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .job-box img {
+            /* width: 120px; */
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .job-box h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .job-box .star-rating {
+            color: #FFD700;
+            margin-bottom: 5px;
+        }
+
+        .job-box .reviews {
+            color: gray;
+            font-size: 14px;
+        }
+
+        .job-box .bio {
+            color: #333;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        .job-box .view-jobs {
+            background-color: #5a67d8;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .job-box .view-jobs:hover {
+            background-color: rgb(0, 208, 255);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>EduLink</h2>
+        <a href="dashboard.html">Home</a>
+        <a href="certificate.html">Certificate</a>
+        <a href="courses.html">Courses</a>
+        <a href="#">Job</a>
+        <a href="intership.html">Internship</a>
+        <a href="home.html">Logout</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Featured companies actively hiring</h1>
+        </div>
+
+        <!-- Company Grid -->
+        <div class="company-grid">
+
+            <div class="job-box">
+                <img src="img/img1.png" alt="Microsoft">
+                <h3>Microsoft</h3>
+                <div class="star-rating">★ ★ ★ ☆ ☆</div>
+                <div class="reviews">263 reviews</div>
+                <div class="bio">We are a global leader in engineering & sciences...</div>
+                <a href="details/Meligible.html" class="view-jobs">View jobs</a>
+            </div>
+
+            <div class="job-box">
+                <img src="img/img2.jfif" alt="Amazon">
+                <h3>Amazon</h3>
+                <div class="star-rating">★ ★ ★ ★ ☆</div>
+                <div class="reviews">14.2K+ reviews</div>
+                <div class="bio">Indian multinational conglomerate company.</div>
+                <a href="details/Aeligible.html" class="view-jobs">View jobs</a>
+            </div>
+
+            <div class="job-box">
+                <img src="img/img3.png" alt="Google">
+                <h3>Google</h3>
+                <div class="star-rating">★ ★ ★ ★ ☆</div>
+                <div class="reviews">10K+ reviews</div>
+                <div class="bio">A global leader in IT services, consulting, and business solutions.</div>
+                <a href="details/Geligible.html" class="view-jobs">View jobs</a>
+            </div>
+
+            <div class="job-box">
+                <img src="img/img4.png" alt="Infosys">
+                <h3>Infosys</h3>
+                <div class="star-rating">★ ★ ★ ★ ☆</div>
+                <div class="reviews">9K+ reviews</div>
+                <div class="bio">Leading in next-generation digital services and consulting.</div>
+                <a href="details/Ieligible.html" class="view-jobs">View jobs</a>
+            </div>
+
+            <div class="job-box">
+                <img src="img/img5.png" alt="Capgemini">
+                <h3>Capgemini</h3>
+                <div class="star-rating">★ ★ ★ ☆ ☆</div>
+                <div class="reviews">263 reviews</div>
+                <div class="bio">We are a global leader in engineering & sciences...</div>
+                <a href="details/Celigible.html" class="view-jobs">View jobs</a>
+            </div>
+
+            <div class="job-box">
+                <img src="img/img6.png" alt="Reliance Industries Limited">
+                <h3>Reliance Industries</h3>
+                <div class="star-rating">★ ★ ★ ★ ☆</div>
+                <div class="reviews">14.2K+ reviews</div>
+                <div class="bio">Indian multinational conglomerate company.</div>
+                <a href="details/Religible.html" class="view-jobs">View jobs</a>
+            </div>
+
+            <div class="job-box">
+                <img src="img/img7.jfif" alt="J.P. Morgan">
+                <h3>J.P. Morgan</h3>
+                <div class="star-rating">★ ★ ★ ★ ☆</div>
+                <div class="reviews">10K+ reviews</div>
+                <div class="bio">A global leader in IT services, consulting, and business solutions.</div>
+                <a href="details/Jeligible.html" class="view-jobs">View jobs</a>
+            </div>
+
+            <div class="job-box">
+                <img src="img/img8.png" alt="Tata">
+                <h3>Tata</h3>
+                <div class="star-rating">★ ★ ★ ★ ☆</div>
+                <div class="reviews">9K+ reviews</div>
+                <div class="bio">Leading in next-generation digital services and consulting.</div>
+                <a href="details/Teligible.html" class="view-jobs">View jobs</a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c1dbffb6;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #5a67d8;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            background-color: #434190;
+        }
+
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            padding-left: 150px;
+            text-align: center;
+        }
+
+        /* Internship Grid */
+        .internship-grid {
+            display: flex;
+            /* gap: 10px; */
+            justify-content: center;
+        }
+
+        /* Box Styles */
+        .internship-box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.378);
+            padding: 40px;
+            margin-left: 150px;
+            margin-bottom: 150px;
+            text-align: center;
+            width: 350px; /* Increased width */
+            height: 400px; /* Increased height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .internship-box img {
+            width: 270px;
+            height: 230px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .internship-box h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .internship-box .apply-btn {
+            background-color: #5a67d8;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .internship-box .apply-btn:hover {
+            background-color: rgb(0, 208, 255);
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>EduLink</h2>
+        <a href="dashboard.html">Home</a>
+        <a href="certificate.html">Certificate</a>
+        <a href="courses.html">Courses</a>
+        <a href="job.html">Job</a>
+        <a href="#">Internship</a>
+        <a href="home.html">Logout</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Featured Internships</h1>
+        </div>
+
+        <!-- Internship Grid -->
+        <div class="internship-grid">
+
+            <div class="internship-box">
+                <img src="img/iimg1.jpg" alt="Inhouse Internships">
+                <h3>Inhouse Internships</h3>
+                <a href="internship1.html" class="apply-btn">View</a>
+            </div>
+
+            <div class="internship-box">
+                <img src="img/iimg2.png" alt="Other Internships">
+                <h3>Other Internships</h3>
+                <a href="internship2.html" class="apply-btn">View</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

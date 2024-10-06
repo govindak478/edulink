@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Internship Listing Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .job-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.766);
+            width: 600px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .job-details {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .company-name {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .company-name .rating {
+            color: #FFD700;
+        }
+
+        .job-info {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .job-info span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .job-info i {
+            margin-right: 5px;
+        }
+
+        .exclusive-tag {
+            background-color: #e6eaff;
+            color: #6366F1;
+            border-radius: 15px;
+            padding: 3px 10px;
+            font-size: 12px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .footer-info {
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .footer-info span {
+            margin-right: 20px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .apply-btn, .login-btn {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #3182CE;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .apply-btn {
+            background-color: white;
+            color: #3182CE;
+        }
+
+        .apply-btn:hover {
+            background-color: #e6f2ff;
+        }
+
+        .login-btn {
+            background-color: #3182CE;
+            color: white;
+        }
+
+        .login-btn:hover {
+            background-color: #265997;
+        }
+
+        .job-logo img {
+            width: 140px;
+            height: 120px;
+            margin-left: 3px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="job-card">
+    <!-- Job Details Section -->
+    <div class="job-details">
+        <div class="job-title">Web Deveopment Internship - SLRTCE</div>
+        <div class="company-name">
+            Branch - CMPN 
+            <span class="rating">★ 4.0</span> 
+            <span>(144 Reviews)</span>
+        </div>
+
+        <div class="job-info">
+            <span><i class="fa-regular fa-calendar-days"></i>1month</span>
+            <span><i class="fa-solid fa-location-dot"></i>Computer Science Department, 3rd Floor</span>
+        </div>
+
+        <div class="footer-info">
+            <span>Posted: 14 days ago</span>
+            <span>Openings: 4</span>
+            <span>Applicants: 29</span>
+        </div>
+
+        <!-- Buttons for action -->
+        <div class="action-buttons">
+            <a href="https://forms.gle/zzNiXSY21Bcov6t4A" class="apply-btn">Register to apply</a>
+        </div>
+    </div>
+
+    <!-- Company Logo and Extra Link -->
+    <div>
+        <div class="job-logo">
+            <img src="img/iimg3.png" alt="Amazon Logo">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

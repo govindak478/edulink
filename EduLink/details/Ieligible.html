@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility Checker</title>
+
+    <style>
+        body {
+            font-family: Times New Roman;
+            background-color: #f0f0f0;
+            color: #1c1b4a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #cdc1ff;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.781);
+        }
+
+        h1 {
+            color: #0a0428;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 2px solid #7371fc;
+        }
+
+        button {
+            background-color: #30275f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #7371fc;
+            color: black;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Eligibility Checker</h1>
+        <form id="eligibilityForm">
+            <label for="criteriaValue">Enter your CGPA:</label>
+            <input type="number" id="criteriaValue" min="0" max="10" step="0.1" placeholder="Enter your CGPA" required>
+            <button type="submit">Check Eligibility</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('eligibilityForm').onsubmit = function(event) {
+            event.preventDefault();
+
+            // Get the value entered by the user
+            const criteriaValue = parseFloat(document.getElementById('criteriaValue').value);
+
+            // Reference to the result div
+            const resultDiv = document.getElementById('result');
+
+            // Check if the criteria value is between 7.8 and 10
+            if (criteriaValue >= 7.8 && criteriaValue <= 10) {
+                resultDiv.innerHTML = "Congratulations! You are eligible.";
+                resultDiv.style.color = 'green';
+
+                // Redirect to the company details page if eligible
+                setTimeout(() => {
+                    window.location.href = "Idetail.html";  // Replace with the actual company detail page URL
+                }, 2000);  // Redirect after 2 seconds to show the success message
+            } else {
+                resultDiv.innerHTML = "Sorry, you are not eligible.";
+                resultDiv.style.color = 'red';
+            }
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            background-color: #c1dbffb6;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #5a67d8;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            height: 120vh;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            background-color: #434190;
+        }
+
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+        }
+
+        /* Internship Grid */
+        .internship-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two boxes in each row */
+            gap: 20px;
+        }
+
+        /* Box Styles */
+        .internship-box {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.321);
+            padding: 30px;
+            margin-left: 100px;
+            height: 380px;
+            width: 400px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        
+
+        .internship-box img {
+            width: 240px;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .internship-box h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .internship-box .apply-btn {
+            background-color: #5a67d8;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .internship-box .apply-btn:hover {
+            background-color: rgb(0, 208, 255);
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>EduLink</h2>
+        <a href="dashboard.html">Home</a>
+        <a href="#">Certificate</a>
+        <a href="#">Courses</a>
+        <a href="#">Job</a>
+        <a href="intership.html">Internship</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Featured Internships</h1>
+        </div>
+
+        <!-- Internship Grid -->
+        <div class="internship-grid">
+
+            <!-- Internship Box 1 -->
+            <div class="internship-box">
+                <img src="img/iimg3.png" alt="Computer Science Internships">
+                <h3>Computer Science Internships</h3>
+                <a href="csdetail.html" class="apply-btn">View</a>
+            </div>
+
+            <!-- Internship Box 2 -->
+            <div class="internship-box">
+                <img src="img/iimg4.webp" alt="Information Technology Internships">
+                <h3>Information Technology Internships</h3>
+                <a href="itdetail.html" class="apply-btn">View</a>
+            </div>
+
+            <!-- Internship Box 3 -->
+            <div class="internship-box">
+                <img src="img/iimg5.webp" alt="Electronics And Telecommunication Internships">
+                <h3>Electronics And Telecommunication Internships</h3>
+                <a href="extcdetail.html" class="apply-btn">View</a>
+            </div>
+
+            <!-- Internship Box 4 -->
+            <div class="internship-box">
+                <img src="img/iimg6.jpg" alt="Electronics and Computer Science Internships">
+                <h3>Electronics and Computer Science Internships</h3>
+                <a href="ecsdetail.html" class="apply-btn">View</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
